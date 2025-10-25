@@ -6,10 +6,10 @@ toggle.addEventListener('click', () => navLinks.classList.toggle('show'));
 // JS: Sand & Sterne
 const sandCanvas = document.getElementById('sandMotion');
 const sandCtx = sandCanvas.getContext('2d');
-const starsCanvas = document.getElementById('stars');
-const starsCtx = starsCanvas.getContext('2d');
+const sandCanvas2 = document.getElementById('sandTwinkle');
+const sandCtx2 = sandCanvas2.getContext('2d');
 let width, height;
-function resize(){ width=sandCanvas.width=starsCanvas.width=window.innerWidth; height=sandCanvas.height=starsCanvas.height=window.innerHeight-70; }
+function resize(){ width=sandCanvas.width=sandCanvas2.width=window.innerWidth; height=sandCanvas.height=sandCanvas2.height=window.innerHeight-70; }
 resize();
 window.addEventListener('resize', resize);
 
@@ -21,8 +21,8 @@ window.addEventListener("mousemove", ()=>windFactor=2);
 window.addEventListener("mouseout", ()=>windFactor=1);
 
 // Sterne
-const stars=[];
-for(let i=0;i<150;i++){ stars.push({x:Math.random()*width,y:Math.random()*height,size:Math.random()*1.5+0.5,twinkle:Math.random()*Math.PI*2}); }
+const sandParticles2=[];
+for(let i=0;i<150;i++){ sandParticles2.push({x:Math.random()*width,y:Math.random()*height,size:Math.random()*1.5+0.5,twinkle:Math.random()*Math.PI*2}); }
 
 function animate(){
   sandCtx.clearRect(0,0,width,height);
@@ -33,11 +33,11 @@ function animate(){
     sandCtx.beginPath(); sandCtx.arc(p.x,p.y,p.size,0,Math.PI*2); sandCtx.fill();
   });
 
-  starsCtx.clearRect(0,0,width,height);
-  stars.forEach(s=>{
+  sandCtx2.clearRect(0,0,width,height);
+  sandParticles2.forEach(s=>{
     const alpha=0.5+Math.sin(Date.now()*0.002+s.twinkle)*0.5;
-    starsCtx.fillStyle=`rgba(168, 116, 79,${alpha})`;
-    starsCtx.beginPath(); starsCtx.arc(s.x,s.y,s.size,0,Math.PI*2); starsCtx.fill();
+    sandCtx2.fillStyle=`rgba(18, 100, 225,${alpha})`;/* 168,116,78*/
+    sandCtx2.beginPath(); sandCtx2.arc(s.x,s.y,s.size,0,Math.PI*2); sandCtx2.fill();
   });
 
   requestAnimationFrame(animate);
