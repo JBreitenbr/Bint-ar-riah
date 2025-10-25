@@ -36,7 +36,7 @@ function animate(){
   sandCtx2.clearRect(0,0,width,height);
   sandParticles2.forEach(s=>{
     const alpha=0.5+Math.sin(Date.now()*0.002+s.twinkle)*0.5;
-    sandCtx2.fillStyle=`rgba(18, 100, 225,${alpha})`;/* 168,116,78*/
+    sandCtx2.fillStyle=`rgba(101,67,33,${alpha})`;/* 168,116,78*/
     sandCtx2.beginPath(); sandCtx2.arc(s.x,s.y,s.size,0,Math.PI*2); sandCtx2.fill();
   });
 
