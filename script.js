@@ -33,12 +33,12 @@ function animate(){
     sandCtx.beginPath(); sandCtx.arc(p.x,p.y,p.size,0,Math.PI*2); sandCtx.fill();
   });
 
-  sandCtx2.clearRect(0,0,width,height);
+ /* sandCtx2.clearRect(0,0,width,height);
   sandParticles2.forEach(s=>{
     const alpha=0.5+Math.sin(Date.now()*0.002+s.twinkle)*0.5;
     sandCtx2.fillStyle=`rgba(168,116,78,${alpha})`;
     sandCtx2.beginPath(); sandCtx2.arc(s.x,s.y,s.size,0,Math.PI*2); sandCtx2.fill();
-  });
+  });*/
 
   requestAnimationFrame(animate);
 }
