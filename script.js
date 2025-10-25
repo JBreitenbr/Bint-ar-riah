@@ -36,7 +36,7 @@ function animate(){
   starsCtx.clearRect(0,0,width,height);
   stars.forEach(s=>{
     const alpha=0.5+Math.sin(Date.now()*0.002+s.twinkle)*0.5;
-    starsCtx.fillStyle=`rgba(255,255,255,${alpha})`;
+    starsCtx.fillStyle=`rgba(223,194,125,${alpha})`;
     starsCtx.beginPath(); starsCtx.arc(s.x,s.y,s.size,0,Math.PI*2); starsCtx.fill();
   });
 
